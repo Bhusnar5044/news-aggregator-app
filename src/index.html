@@ -4,16 +4,44 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>News Aggregator</title>
+  <link rel="stylesheet" href="src/styles/index.css">
 </head>
 <body>
+  <!-- title section -->
   <h1 class="site-title">News Aggregator</h1>
   
+  <!-- search container -->
   <div class="search-container">
-    <input type="text" name="search" id="search" placeholder="Type and press enter to search..." />
+    <input type="text" name="search" id="search" onkeyup="myFunction()" placeholder="Type and press enter to search..." />
   </div>
 
-  <ul id="news-articles">
+  <div class="filter">
+    <form action="" id="frm1">
+    <select name="" id="country">
+    </select>
 
+    <select name="" id="category">
+    </select>
+
+    <input type="date" id="from" name="fromDate">
+
+    <input type="date" id="to" name="toDate">
+
+    <input type="submit" id="getfilter">
+  </form>
+  </div>
+
+  <!-- dark/light mode toggler -->
+  <div class="toggle-container">
+    <input type="checkbox" id="switch" name="theme" /><label for="switch">Toggle</label>
+  </div>
+  
+  <!-- new articles section -->
+  <ul id="news-articles">  
   </ul>
+
+  <!-- script section -->
+  <script src="src/scripts/index.js"></script>
+
 </body>
 </html>
