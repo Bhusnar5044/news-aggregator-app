@@ -80,11 +80,14 @@ function display(url){
                     +'</li>';
     
                 });
-    
+                
                 document.querySelector('#news-articles').innerHTML=output;
+                document.querySelector('#news-articles').style.display = '';
+                document.querySelector('.not-found').style.display = 'none';
     
             }else if(data.totalResults === 0){
-                document.querySelector('#news-articles').innerHTML="No article was found based on the search.";
+                document.querySelector('.not-found').style.display = 'block';
+                document.querySelector('#news-articles').style.display = 'none';
             
             }else{
                 iterateNews();

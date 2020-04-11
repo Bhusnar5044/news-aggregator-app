@@ -202,3 +202,37 @@ body.transision, body.transition *, body.transition *::before, body.transition *
     border-radius: 5px;
     margin: 0 1%;
 }
+/* end filter css  */
+
+/* not found css */
+.not-found{
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* pagination css */
+.pagination{
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    text-align: center;
+}
+.pagination a {
+    color: black;
+    /* float: initial; */
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+  }
+  
+  .pagination a.active {
+    background-color: dodgerblue;
+    color: white;
+  }
+  
+  .pagination a:hover:not(.active) {background-color: #ddd;}
