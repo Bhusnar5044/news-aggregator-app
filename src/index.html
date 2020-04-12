@@ -7,6 +7,9 @@
   <link rel="stylesheet" href="src/styles/index.css">
 </head>
 <body>
+  <!--window loading div -->
+  <div class="loader"></div>
+
   <!-- title section -->
   <h1 class="site-title">News Aggregator</h1>
   
@@ -44,15 +47,10 @@
     <p>No article was found based on the search.</p>
   </div>
 
-  <div class="pagination">
-    <a href="#">&laquo;</a>
-    <a class="active"href="#">1</a>
-    <a  href="#">2</a>
-    <a href="#">3</a>
-    <a href="#">4</a>
-    <a href="#">5</a>
-    <a href="#">6</a>
-    <a href="#">&raquo;</a>
+  <div id="pagination">
+    <a href="#" id="prev">&laquo;</a>
+    <a href="#" class="active" id="page">1</a>   
+    <a href="#" id="next">&raquo;</a>
   </div>
   <!-- script section -->
   <script src="src/scripts/index.js"></script>

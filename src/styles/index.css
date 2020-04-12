@@ -1,6 +1,26 @@
 /* css start */
 @import "./reset.css";
 
+/*start window loading animation */
+.loader {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background: url(http://smallenvelop.com/wp-content/uploads/2014/08/Preloader_11.gif) center no-repeat;
+}
+
+@keyframes fadeOut {
+    0% {opacity: 1;}
+    100% {opacity: 0;}
+ }
+ 
+ .fadeOut {
+    animation-name: fadeOut;
+ }
+/*end window loading animation */
 
 .site-title{
     width: 50%;
@@ -10,11 +30,14 @@
     padding: 10px;
     font-size: 2em;
     font-weight: bold;
+    color: #2196f3;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
 .search-container{
     width: 90%;
-    margin: 0 5% 30px 5%;   
+    margin: 0 5% 30px 5%;  
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); 
 }
 
 #search{
@@ -137,6 +160,7 @@ input[type=checkbox]{
     float: right;
     border-radius: 100px;
     position: relative;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
 .toggle-container label::after{
@@ -168,19 +192,26 @@ body.transision, body.transition *, body.transition *::before, body.transition *
 }
 /* dark / light mode css end */
 
+/* start filter css  */
 .filter{
     width: 90%;
     margin-left: 5%;
     margin-right: 5%;
     margin-bottom: 20px;
     text-align: center;
+    
 }
+/* .filter form{
+    display: flex;
+    flex-flow: row wrap;
+} */
 .filter select{
     width: 20%;
     height: 30px; 
     padding: 0 10px;  
     border-radius: 5px;
     margin: 0 1%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
 .filter input[type='date']{
@@ -189,18 +220,33 @@ body.transision, body.transition *, body.transition *::before, body.transition *
     padding: 0 10px;
     border-radius: 5px;
     margin: 0 1%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
 .filter input[type='submit']{
     width: 10%;
     height: 30px;
-    padding: 10px;
     background-color: #393939;
     text-align: center;
     border: none;
-    color: honeydew;
+    color: #2196f3;
     border-radius: 5px;
     margin: 0 1%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+@media only screen and (max-width: 600px){
+    .filter select{
+        width: 40%;
+        margin-bottom: 10px;
+    }
+    .filter input[type='date']{
+        width: 35%;
+        margin-bottom: 10px;
+    }
+    .filter input[type='submit']{
+        width: 60%;
+        margin-bottom: 10px;
+    }
 }
 /* end filter css  */
 
@@ -214,7 +260,7 @@ body.transision, body.transition *, body.transition *::before, body.transition *
 }
 
 /* pagination css */
-.pagination{
+#pagination{
     width: 90%;
     margin-left: 5%;
     margin-right: 5%;
@@ -222,17 +268,39 @@ body.transision, body.transition *, body.transition *::before, body.transition *
     margin-top: 20px;
     text-align: center;
 }
-.pagination a {
-    color: black;
+#pagination a {
+    color: #2196f3;
     /* float: initial; */
     padding: 8px 16px;
     text-decoration: none;
     transition: background-color .3s;
   }
   
-  .pagination a.active {
-    background-color: dodgerblue;
-    color: white;
-  }
-  
-  .pagination a:hover:not(.active) {background-color: #ddd;}
+#pagination a.active {
+background-color: dodgerblue;
+color: white;
+}
+
+#pagination a:hover:not(.active) {background-color: #ddd;}
+
+/* css for pagination show/hide articles on click  */
+#news-articles .article.hide{
+    display: none;
+}
+
+#news-articles .article.show{
+    display: '';
+    animation: show .5s ease;
+}
+
+@keyframes show{
+    0%{
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+/*end css for pagination show/hide */
