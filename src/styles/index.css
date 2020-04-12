@@ -271,9 +271,10 @@ body.transision, body.transition *, body.transition *::before, body.transition *
 #pagination a {
     color: #2196f3;
     /* float: initial; */
-    padding: 8px 16px;
+    padding: 5px 16px;
     text-decoration: none;
     transition: background-color .3s;
+    font-size: 25px;
   }
   
 #pagination a.active {

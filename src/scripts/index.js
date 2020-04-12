@@ -2,7 +2,6 @@
 let inputele = document.getElementById("search");
 
 window.onload = ()=>{
-
     document.querySelector('.loader').classList.add('fadeOut');
     document.querySelector('.loader').classList.remove('loader');
     
@@ -12,7 +11,6 @@ window.onload = ()=>{
 
 //start news top-articles display code
 function iterateNews(){
-
     if(inputele.value === ""){
 
         var url = 'http://newsapi.org/v2/top-headlines?' +
@@ -25,7 +23,6 @@ function iterateNews(){
 
 //start news search code :Search bar 
 function myFunction(){
-
     let url = 'http://newsapi.org/v2/everything?' +
           'q='+inputele.value+'&' +
           'pageSize=80&' +
@@ -154,7 +151,6 @@ let country = document.getElementById('country');
 fetch('src/jsonData/countries.json')
 
     .then(function(response) {
-
         return response.json();
 
     })
@@ -166,13 +162,13 @@ fetch('src/jsonData/countries.json')
         });
         country.innerHTML = output;
         country.value = 'IN';
+
     });
 
 let category = document.getElementById('category');
 fetch('src/jsonData/category.json')
 
     .then(function(response) {
-
         return response.json();
 
     })
@@ -182,14 +178,16 @@ fetch('src/jsonData/category.json')
             output+='<option>'+element.name+'</option>';
         });
         category.innerHTML = output;
+
     });
 //end set filter section option values
 
-
+//pagination code
 const newsArticles=document.getElementById('news-articles').children;
-// console.log(newsArticles);
-const maxArticles= 16;
+
+const maxArticles= 12;
 let curindex = 1;
+
 document.getElementById('prev').addEventListener('click', ()=>{
     curindex--;
     showArticles();
@@ -201,10 +199,7 @@ document.getElementById('next').addEventListener('click', ()=>{
 });
 
 function showArticles(){
-    // let index = parseInt(resultCount/maxArticles);
-
     for(let i=0; i< newsArticles.length; i++){
-        // console.log(newsArticles[i]);
         newsArticles[i].style.display = 'none';
         // newsArticles[i].classList.add("hide");
 
@@ -214,7 +209,6 @@ function showArticles(){
             // newsArticles[i].classList.remove("hide");
         }
     }
-
-    document.getElementById('page').innerHTML = curindex;
-  
+    document.getElementById('page').innerHTML = curindex; 
 }
+//end pagination code
