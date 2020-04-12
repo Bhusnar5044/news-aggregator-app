@@ -187,7 +187,7 @@ fetch('src/jsonData/category.json')
 
 
 const newsArticles=document.getElementById('news-articles').children;
-console.log(newsArticles);
+// console.log(newsArticles);
 const maxArticles= 16;
 let curindex = 1;
 document.getElementById('prev').addEventListener('click', ()=>{
