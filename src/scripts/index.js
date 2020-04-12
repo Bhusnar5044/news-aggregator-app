@@ -17,7 +17,6 @@ function iterateNews(){
 
         var url = 'http://newsapi.org/v2/top-headlines?' +
                 'country=in&' +
-                'pageSize=80&' +
                 'apiKey=f95bc5db28994a1da7895f7e38cdb7f3'; 
         display(url);
     }
@@ -85,6 +84,7 @@ function display(url){
                     output+='<li class="article"><a href="'+element.url+'" class="article-link" target="_blank">'
                         +'<img class="article-img" src="'+ element.urlToImage+'" alt=""></img>'
                         +'<h2 class="article-title">'+element.title+'</h2>'
+                        +'<p class="article-description">'+element.description+'</p>'
                         +'<span class="article-author">-'+element.author+'</span>'
                         +'</a>'
                     +'</li>';
@@ -204,12 +204,14 @@ function showArticles(){
     // let index = parseInt(resultCount/maxArticles);
 
     for(let i=0; i< newsArticles.length; i++){
-        console.log(newsArticles[i]);
-        newsArticles[i].classList.add("hide");
+        // console.log(newsArticles[i]);
+        newsArticles[i].style.display = 'none';
+        // newsArticles[i].classList.add("hide");
 
         if(i >= (curindex*maxArticles)-maxArticles && i < curindex * maxArticles){
-            newsArticles[i].classList.add('show');
-            newsArticles[i].classList.remove("hide");
+            newsArticles[i].style.display = '';
+            // newsArticles[i].classList.add('show');
+            // newsArticles[i].classList.remove("hide");
         }
     }
 
