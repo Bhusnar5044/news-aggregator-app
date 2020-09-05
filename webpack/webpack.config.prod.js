@@ -12,7 +12,6 @@ module.exports = merge(common, {
   output: {
     filename: 'js/[name].[chunkhash:8].js',
     chunkFilename: 'js/[name].[chunkhash:8].chunk.js',
-    publicPath: "/news-aggregator-app/",
   },
   plugins: [
     new Webpack.DefinePlugin({

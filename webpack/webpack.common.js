@@ -9,7 +9,7 @@ module.exports = {
   },
   output: {
     path: Path.join(__dirname, '../build'),
-    filename: 'js/[name].js'
+    filename: 'js/[name].js',
   },
   optimization: {
     splitChunks: {
