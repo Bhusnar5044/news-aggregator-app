@@ -1,8 +1,11 @@
 {
+  "hompage":"",
   "name": "webpack-starter",
   "version": "1.0.0",
   "description": "A light foundation for your next frontend project based on webpack.",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "build": "set NODE_ENV=production webpack --config webpack/webpack.config.prod.js  --colors",
     "start": "webpack-dev-server --open --config webpack/webpack.config.dev.js"
   },
@@ -43,7 +46,8 @@
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.9",
     "webpack-dev-server": "^3.8.1",
-    "webpack-merge": "^4.2.1"
+    "webpack-merge": "^4.2.1,
+    "gh-pages":"^2.0.1"
   },
   "dependencies": {
     "@babel/polyfill": "^7.4.0",
