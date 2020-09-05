@@ -4,14 +4,13 @@
   "version": "1.0.0",
   "description": "A light foundation for your next frontend project based on webpack.",
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "build": "set NODE_ENV=production webpack --config webpack/webpack.config.prod.js  --colors",
-    "start": "webpack-dev-server --open --config webpack/webpack.config.dev.js"
+    "start": "webpack-dev-server --open --config webpack/webpack.config.dev.js",
+    "deploy": "npm run build && gh-pages -d dist -m \"Updates --skip-ci\""
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wbkd/webpack-starter.git"
+    "url": "https://bhusnar5044.github.io/news-aggregator-app/"
   },
   "keywords": [
     "webpack",
