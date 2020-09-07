@@ -1,3 +1,5 @@
+import './styles/index.css';
+
 //get search element
 let inputele = document.getElementById("search");
 
@@ -148,7 +150,7 @@ let trans = () =>{
 // set filter section option values
 let country = document.getElementById('country');
 
-fetch('src/jsonData/countries.json')
+fetch('/src/jsonData/countries.json')
 
     .then(function(response) {
         return response.json();
@@ -166,7 +168,7 @@ fetch('src/jsonData/countries.json')
     });
 
 let category = document.getElementById('category');
-fetch('src/jsonData/category.json')
+fetch('/src/jsonData/category.json')
 
     .then(function(response) {
         return response.json();
