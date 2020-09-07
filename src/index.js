@@ -1,5 +1,6 @@
 import './styles/index.css';
-
+// import countryJson from './jsonData/countries.json';
+// import categoryJson from './jsonData/category.json';
 //get search element
 let inputele = document.getElementById("search");
 
@@ -15,7 +16,7 @@ window.onload = ()=>{
 function iterateNews(){
     if(inputele.value === ""){
 
-        var url = 'http://newsapi.org/v2/top-headlines?' +
+        var url = 'https://newsapi.org/v2/top-headlines?' +
                 'country=in&' +
                 'apiKey=f95bc5db28994a1da7895f7e38cdb7f3'; 
         display(url);
@@ -25,7 +26,7 @@ function iterateNews(){
 
 //start news search code :Search bar 
 function myFunction(){
-    let url = 'http://newsapi.org/v2/everything?' +
+    let url = 'https://newsapi.org/v2/everything?' +
           'q='+inputele.value+'&' +
           'pageSize=80&' +
           'from=2020-04-10&' +
@@ -49,7 +50,7 @@ document.getElementById("getfilter").addEventListener("click", function(event){
     datefrom = x.elements[2].value;
     dateTo = x.elements[3].value;
 
-    let url = 'http://newsapi.org/v2/top-headlines?' +
+    let url = 'https://newsapi.org/v2/top-headlines?' +
     'country='+countryTxt+'&' +
     'category='+categoryTxt+'&' +
     'pageSize=80&' +
@@ -150,16 +151,14 @@ let trans = () =>{
 // set filter section option values
 let country = document.getElementById('country');
 
-fetch('/src/jsonData/countries.json')
-
-    .then(function(response) {
-        return response.json();
-
-    })
-    .then(function(response) {
+import(
+    /* webpackChunkName: "json_menu" */
+    './jsonData/countries.json'
+)
+    .then(function({default: jsonMenu}) {
         let output = '';
-        // console.log(response);
-        response.forEach(element => {
+        console.log("data ",jsonMenu);
+        jsonMenu.forEach(element => {
             output+='<option value="'+element.code+'">'+element.name+'</option>';
         });
         country.innerHTML = output;
@@ -168,15 +167,11 @@ fetch('/src/jsonData/countries.json')
     });
 
 let category = document.getElementById('category');
-fetch('/src/jsonData/category.json')
 
-    .then(function(response) {
-        return response.json();
-
-    })
-    .then(function(response) {
+import('./jsonData/category.json')
+    .then(function({default: jsonMenu}) {
         let output = '';
-        response.forEach(element => {
+        jsonMenu.forEach(element => {
             output+='<option>'+element.name+'</option>';
         });
         category.innerHTML = output;
