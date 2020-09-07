@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[2],{3:function(e){e.exports=JSON.parse('[{"name":"business","code":"business"},{"name":"entertainment","code":"entertainment"},{"name":"general","code":"general"},{"name":"health","code":"health"},{"name":"science","code":"science"},{"name":"sports","code":"sports"},{"name":"technology","code":"technology"}]')}}]);
-//# sourceMappingURL=2.main.js.map
